@@ -16,4 +16,39 @@ The script works by using autohotkey to read the keyboard inputs, then converts 
 1. Place the smashbox.ini file inside your dolphin-folder-name\User\Config\Profiles\GCPad folder. 
 2. In dolphin, open up controller config. Set player 1 to a standard controller, then hit configure. Set device to vjoy. Under profile, select smashbox and hit load. Then hit ok.
 3. Run the smash.ahk script. You should be able to do this by double clicking on the file after installing autohotkey.
+4. If you want to pause the script, hit the pause key. If you want to exit the script, open up hidden icons, right click the green H and hit exit.
 
+# Default Controls
+2qwe : up left down right
+
+x : x1
+
+c : x2
+
+d : y1
+
+v : y2
+
+9 : L
+
+0 : Y
+
+- : R
+
+= : Lightshield
+
+o : B
+
+p : A
+
+[ : X
+
+] : Z
+
+knm, : cstick up left down right
+
+f5 : start
+
+pause : pause and upause script. Used if you want to type without exiting autohotkey.
+
+To change controls, you have to edit the smash.ahk script. In the future I would like to make this easier.
