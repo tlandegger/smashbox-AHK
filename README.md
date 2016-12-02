@@ -37,7 +37,7 @@ v : y2
 
 0 : Y
 
-- : R
+dash : R
 
 = : Lightshield
 
