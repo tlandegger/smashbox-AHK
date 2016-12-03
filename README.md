@@ -13,7 +13,7 @@ I have no relation with Hitbox, I do like their products though and plan on buyi
 2. Ishurka v 4.3. Otherwise known as faster melee. Other dolphin versions might work, but I tested with dolphin version 5 and the control stick values work slightly differently. https://www.smashladder.com/download/dolphin/fm
 3. A keyboard with high n-key rollover. This is how many keys can be pressed at the same time without errors. Most gaming and mechanical keyboards will allow at least 6 keys which should be enough for every advanced technique.
 4. Autohotkey. This is a scripting language for remapping keyboard keys. Download the installer here: https://autohotkey.com/
-5. Vjoy: a joystick emulator. Download and install here: http://www.headsoft.com.au/index.php?category=vjoy
+5. Vjoy: a joystick emulator. Download and install here: https://sourceforge.net/projects/vjoystick/?source=typ_redirect
 6. AHK-CvJoyInterface: a library for linking Autohotkey and Vjoy. Download CvJoyInterface.ahk from https://github.com/evilC/AHK-CvJoyInterface Place CvJoyInterface.ahk inside the Lib folder where you installed autohotkey (for me C:\Program Files\AutoHotkey\Lib) You may have to make the Lib folder if it is not already there. 
 
 # Setup
