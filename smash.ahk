@@ -199,6 +199,37 @@ F5 up::
 	myStick.SetBtn(0,4)
 	Return
 
+Up::
+	myStick.SetBtn(1,13)
+	Return
+
+Up up::
+	myStick.SetBtn(0,13)
+	Return
+
+Left::
+	myStick.SetBtn(1,14)
+	Return
+
+Left up::
+	myStick.SetBtn(0,14)
+	Return
+
+Down::
+	myStick.SetBtn(1,15)
+	Return
+
+Down up::
+	myStick.SetBtn(0,15)
+	Return
+
+Right::
+	myStick.SetBtn(1,16)
+	Return
+
+Right up::
+	myStick.SetBtn(0,16)
+	Return
 
 
 ; STICK
