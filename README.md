@@ -19,7 +19,7 @@ I have no relation with Hitbox, I do like their products though and plan on buyi
 
 # Setup
 1. Place the smashbox.ini file inside your dolphin-folder-name\User\Config\Profiles\GCPad folder. 
-2. In dolphin, open up controller config. Set player 1 to a standard controller, then hit configure. Set device to vjoy. Under profile, select smashbox and hit load. Then hit ok.
+2. In dolphin, open up controller config. Set player 1 to a standard controller, then hit configure. Under profile, select smashbox and hit load. After, Set device to vjoy. Then hit ok.
 3. Run the smash.ahk script. You should be able to do this by double clicking on the file after installing autohotkey.
 4. If you want to pause the script, hit the pause key. If you want to exit the script, open up hidden icons, right click the green H and hit exit.
 
