@@ -58,7 +58,7 @@ f5 : start
 
 pause : pause and unpause script. Used if you want to type without exiting autohotkey.
 
-To change controls, you have to edit the smash.ahk script. In the future I would like to make this easier.
+To change controls, right click on the autohotkey icon in the task tray and click edit controls.
 
 # Useful Analog Inputs
 
