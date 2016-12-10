@@ -56,6 +56,8 @@ knm, : cstick up left down right
 
 f5 : start
 
+arrow keys: dpad
+
 pause : pause and unpause script. Used if you want to type without exiting autohotkey.
 
 To change controls, right click on the autohotkey icon in the task tray and click edit controls.
