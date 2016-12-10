@@ -88,11 +88,12 @@ x2 := 0
 y1 := 0
 y2 := 0
 
+/* PM
 v1x := 9088
 v2x := 5120
 v3x := 3712
 
-v1y := 9088
+v1y := 15000
 v2y := 5120
 v3y := 3712
 
@@ -105,57 +106,101 @@ xhighstart := 29376
 
 ylowstart := 3328
 yhighstart := 29312
+*/
+
+; Melee
+l0 := 8000
+l1 := 13800
+l2 := 11000
+l3 := 9300
+
+r0 := 25150
+r1 := 19150
+r2 := 22000
+r3 := 23800
+
+u0 := 7900
+u1 := 13800
+u2 := 11230
+u3 := 9200
+
+d0 := 25300
+d1 := 19200
+d2 := 21820
+d3 := 24000
 
 ; Gives stick input based on stick variables
 
-stick() {
+
+stickx() {
   global
   if ((l and r) or ((not l) and (not r))) {
     myStick.SetAxisByIndex(vJoyInterface.PercentTovJoy(50),1)
   } 
   else if (l) {
-    if (x1 > 0 and x2 > 0) {
-      myStick.SetAxisByIndex(xlowstart + v3x,1)
+    if (x1 and x2) {
+      myStick.SetAxisByIndex(l3,1) ; 55 good
+    }
+    else if (x1) {
+      myStick.SetAxisByIndex(l1,1) ;101 good 
+    }
+    else if (x2) {
+      myStick.SetAxisByIndex(l2,1) ;73 good
     }
     else {
-      myStick.SetAxisByIndex(xlowstart + x1 + x2,1)
+      myStick.SetAxisByIndex(l0,1) ;42
     }
   }
   else {
-    if (x1 > 0 and x2 > 0) {
-      myStick.SetAxisByIndex(xhighstart - v3x,1)
+    if (x1 and x2) {
+      myStick.SetAxisByIndex(r3,1) ;201
+    }
+    else if (x1) {
+      myStick.SetAxisByIndex(r1,1) ;155 good
+    }
+    else if (x2) {
+      myStick.SetAxisByIndex(r2,1) ;183 good
     }
     else {
-      myStick.SetAxisByIndex(xhighstart - x1 - x2,1)
+      myStick.SetAxisByIndex(r0,1) ;215 25400
     }
   }
+  return
+}
 
+
+
+sticky() {
+  global
   if ((u and d) or ((not u) and (not d))) {
     myStick.SetAxisByIndex(vJoyInterface.PercentTovJoy(50),2)
   } 
   else if (u) {
-    if (y1 > 0 and y2 > 0) {
-      myStick.SetAxisByIndex(ylowstart + v3y,2)
+    if (y1 and y2) {
+      myStick.SetAxisByIndex(u3,2) ;201
+    }
+    else if (y1) {
+      myStick.SetAxisByIndex(u1,2) ;154
+    }
+    else if (y2) {
+      myStick.SetAxisByIndex(u2,2) ;180
     }
     else {
-      if(y1 > 0)
-        y1 := v1y
-      if(y2 > 0)
-        y2 := v2y
-      myStick.SetAxisByIndex(ylowstart + y1 + y2,2)
+      myStick.SetAxisByIndex(u0,2) ;214
     }
   }
   else {
-    if (y1 > 0 and y2 > 0) {
-      myStick.SetAxisByIndex(yhighstart - v3y,2)
+    if (y1 and y2) {
+      myStick.SetAxisByIndex(d3,2) ;53
+    }
+    else if (y1) {
+      myStick.SetAxisByIndex(d1,2) ;100
+    }
+    else if (y2) {
+      myStick.SetAxisByIndex(d2,2) ;74
     }
     else {
-      ;For whatever reason y1 and y2 were off by 1 dolphin unit for the down direction, so we adjust here
-      if(y1 > 0)
-        y1 := v1yhigh
-      if(y2 > 0)
-        y2 := v2yhigh
-      myStick.SetAxisByIndex(yhighstart - y1 - y2,2)
+      myStick.SetAxisByIndex(d0,2) ;40 ;25250
     }
   }
   return
@@ -417,86 +462,86 @@ Label25_UP:
 
 
 Label4:
-  global r := true
-  stick()
+  r := true
+  stickx()
   return
 
 Label4_UP:
-  global r := false
-  stick()
+  r := false
+  stickx()
   return
 
 Label2:
-  global l := true
-  stick()
+  l := true
+  stickx()
   return
 
 Label2_UP:
-  global l := false
-  stick()
+  l := false
+  stickx()
   return
 
 Label1:
-  global u := true
-  stick()
+  u := true
+  sticky()
   return
 
 Label1_UP:
-  global u := false
-  stick()
+  u := false
+  sticky()
   return
 
 Label3:
-  global d := true
-  stick()
+  d := true
+  sticky()
   return
 Label3_UP:
-  global d := false
-  stick()
+  d := false
+  sticky()
   return
 
 Label5:
-  global x1 := global v1x
-  stick()
+  x1 := true
+  stickx()
   return
 
 Label5_UP:
-  global x1 := 0
-  stick()
+  x1 := false
+  stickx()
   return
 
 Label6:
-  global x2 := global v2x
-  stick()
+  x2 := true
+  stickx()
   return
 
 Label6_UP:
-  global x2 := 0
-  stick()
+  x2 := false
+  stickx()
   return
 
 Label7:
-  global y1 := global v1y
-  stick()
+  y1 := true
+  sticky()
   return
 Label7_UP:
-  global y1 := 0
-  stick()
+  y1 := false
+  sticky()
   return
 
 Label8:
-  global y2 := global v2y
-  stick()
+  y2 := true
+  sticky()
   return
 Label8_UP:
-  global y2 := 0
-  stick()
+  y2 := false
+  sticky()
   return
 
 ;; Lightshield
 
 Label12:
-  myStick.SetAxisByIndex(vJoyInterface.PercentTovJoy(60),3)
+  myStick.SetAxisByIndex(vJoyInterface.PercentTovJoy(59),3)
   Return
 
 Label12_UP:
