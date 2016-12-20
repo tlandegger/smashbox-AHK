@@ -108,6 +108,7 @@ ylowstart := 3328
 yhighstart := 29312
 */
 
+/*
 ; Melee
 l0 := 8000
 l1 := 13800
@@ -128,6 +129,28 @@ d0 := 25300
 d1 := 19200
 d2 := 21820
 d3 := 24000
+*/
+
+; alt Melee
+l0 := 5400  ;42
+l1 := 12900 ;101
+l2 := 9300  ;73
+l3 := 7000  ;55
+
+r0 := 27600 ;215
+r1 := 19900 ;155
+r2 := 23500 ;183
+r3 := 25800 ;201
+
+u0 := 5300  ;214
+u1 := 12900 ;154
+u2 := 9600  ;180
+u3 := 6900  ;201
+
+d0 := 27600 ;40
+d1 := 19900 ;100
+d2 := 23200 ;74
+d3 := 25900 ;53
 
 ; Gives stick input based on stick variables
 
@@ -139,30 +162,30 @@ stickx() {
   } 
   else if (l) {
     if (x1 and x2) {
-      myStick.SetAxisByIndex(l3,1) ; 55 good
+      myStick.SetAxisByIndex(l3,1)
     }
     else if (x1) {
-      myStick.SetAxisByIndex(l1,1) ;101 good 
+      myStick.SetAxisByIndex(l1,1)
     }
     else if (x2) {
-      myStick.SetAxisByIndex(l2,1) ;73 good
+      myStick.SetAxisByIndex(l2,1)
     }
     else {
-      myStick.SetAxisByIndex(l0,1) ;42
+      myStick.SetAxisByIndex(l0,1)
     }
   }
   else {
     if (x1 and x2) {
-      myStick.SetAxisByIndex(r3,1) ;201
+      myStick.SetAxisByIndex(r3,1)
     }
     else if (x1) {
-      myStick.SetAxisByIndex(r1,1) ;155 good
+      myStick.SetAxisByIndex(r1,1)
     }
     else if (x2) {
-      myStick.SetAxisByIndex(r2,1) ;183 good
+      myStick.SetAxisByIndex(r2,1)
     }
     else {
-      myStick.SetAxisByIndex(r0,1) ;215 25400
+      myStick.SetAxisByIndex(r0,1)
     }
   }
   return
@@ -177,16 +200,16 @@ sticky() {
   } 
   else if (u) {
     if (y1 and y2) {
-      myStick.SetAxisByIndex(u3,2) ;201
+      myStick.SetAxisByIndex(u3,2) 
     }
     else if (y1) {
-      myStick.SetAxisByIndex(u1,2) ;154
+      myStick.SetAxisByIndex(u1,2) 
     }
     else if (y2) {
-      myStick.SetAxisByIndex(u2,2) ;180
+      myStick.SetAxisByIndex(u2,2) 
     }
     else {
-      myStick.SetAxisByIndex(u0,2) ;214
+      myStick.SetAxisByIndex(u0,2) 
     }
   }
   else {
